@@ -13,7 +13,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WebApplication2.Models;
 
-namespace WebApplication2.Controllers
+namespace WebApplication2.Controllers 
 {
     public class mutantController : ApiController
     {
@@ -41,21 +41,21 @@ namespace WebApplication2.Controllers
                 var result = new HttpResponseBaseModel();
                 if (parameters == null)
                 {
-                    result.Code = 400;
+                    result.Code = 403;
                     result.Message = "ERROR, No se recibe datos en Array base nitrogenada del ADN. ";
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, result, Configuration.Formatters.JsonFormatter);
+                    return Request.CreateResponse(HttpStatusCode.Forbidden, result, Configuration.Formatters.JsonFormatter);
                 }
                 if (!Modelo.ValidarMatrizNXN(parameters.Dna))
                 {
-                    result.Code = 400;
-                    result.Message = "ERROR, Array No es NxN";
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, result, Configuration.Formatters.JsonFormatter);
+                    result.Code = 403;
+                    result.Message = "ERROR, Array No es NxN "; 
+                    return Request.CreateResponse(HttpStatusCode.Forbidden, result, Configuration.Formatters.JsonFormatter);
                 }
                 if (!Modelo.VerificacionDeLetras(parameters.Dna))
                 {
-                    result.Code = 400;
+                    result.Code = 403;
                     result.Message = "ERROR, Cadena de ADN desconocida , se Buscan Xmen,NO ALIENS.";
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, result, Configuration.Formatters.JsonFormatter);
+                    return Request.CreateResponse(HttpStatusCode.Forbidden, result, Configuration.Formatters.JsonFormatter);
                 }
                 if (Modelo.isMutant(parameters.Dna))
                 {
@@ -76,7 +76,7 @@ namespace WebApplication2.Controllers
             }
             catch (Exception e)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, e, Configuration.Formatters.JsonFormatter);
+                return Request.CreateResponse(HttpStatusCode.Forbidden, e, Configuration.Formatters.JsonFormatter);
             }
 
         }

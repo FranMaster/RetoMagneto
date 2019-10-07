@@ -10,11 +10,7 @@ namespace WebApplication2.Controllers
     {
         public ActionResult Index()
         {
-<<<<<<< HEAD
-            ViewBag.Title = "Home Page"; 
-=======
             ViewBag.Title = "Home Page";
->>>>>>> master
 
             return View();
         }
