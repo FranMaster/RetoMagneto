@@ -39,3 +39,8 @@ Esta Api Trae como resultado un objeto JSON que trae las estadisticas de las cad
     "count_human_dna": 5,
     "Ratio": 0.4
 }
+
+# Tener Encuenta
+
+Para Utilizar este servico desde su Cliente debe implementar un metodo con la Firma  **boolean isMutant(String[] dna); [Ejemplo Java]
+Si el Servicio regresa un OK sera un **true  como respuesta del Callback de lo contrario se Enviara un **False
