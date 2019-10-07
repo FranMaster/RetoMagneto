@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DnaAnalizerModelStoreContainer" CdmEntityContainer="DnaAnalizerEntities">
+    <EntitySetMapping Name="CadenasAnalizadas">
+      <EntityTypeMapping TypeName="DnaAnalizerModel.CadenasAnalizadas">
+        <MappingFragment StoreEntitySet="CadenasAnalizadas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaConsulta" ColumnName="FechaConsulta" />
+          <ScalarProperty Name="AdnAnalizado" ColumnName="AdnAnalizado" />
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
